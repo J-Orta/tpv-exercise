@@ -2,6 +2,19 @@ package oop.inheritance.verifone.vx520;
 
 public class VerifoneVx520Display {
 
+    private static VerifoneVx520Display uniqueInstance;
+
+    private VerifoneVx520Display() {
+
+    }
+
+    public static VerifoneVx520Display getInstance(){
+        if(uniqueInstance==null){
+            uniqueInstance = new VerifoneVx520Display();
+        }
+        return uniqueInstance;
+    }
+
     /**
      * Prints a message to specied position
      *

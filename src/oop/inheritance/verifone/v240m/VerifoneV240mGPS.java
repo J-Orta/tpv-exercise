@@ -1,6 +1,21 @@
 package oop.inheritance.verifone.v240m;
 
+import oop.inheritance.ingenico.IngenicoChipReader;
+
 public class VerifoneV240mGPS {
+
+    private static VerifoneV240mGPS uniqueInstance;
+
+    private VerifoneV240mGPS() {
+
+    }
+
+    public static VerifoneV240mGPS getInstance(){
+        if(uniqueInstance==null){
+            uniqueInstance = new VerifoneV240mGPS();
+        }
+        return uniqueInstance;
+    }
     /**
      * Opens a connection using the GPS device
      *
